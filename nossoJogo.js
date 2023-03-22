@@ -10,3 +10,52 @@
  * 
  * 
  */
+
+
+    console.log("Boas vindas ao jogo de BlackJack!")
+
+    const novaRodada = confirm("Quer iniciar uma nova rodada?")
+
+    function jogoNovaRodada() {
+
+      if(novaRodada){
+         let cartasUsuario1 = comprarCarta()
+         let cartasUsuario2 = comprarCarta()
+         let cartasComputador1 = comprarCarta()
+         let cartasComputador2 = comprarCarta()
+
+         let totalUsuarioValor = cartasUsuario1.valor + cartasUsuario2.valor
+         let totalComputadorValor = cartasComputador1.valor + cartasComputador2.valor
+
+         let totalUsuarioTexto1 = cartasUsuario1.texto
+         let totalUsuarioTexto2 = cartasUsuario2.texto
+
+         let totalComputadorTexto1 = cartasComputador1.texto
+         let totalComputadorTexto2 = cartasComputador2.texto
+
+         console.log(`Usuário - cartas: ${totalUsuarioTexto1} ${totalUsuarioTexto2} - pontuação ${totalUsuarioValor}`)
+         console.log(`Computador - cartas: ${totalComputadorTexto1} ${totalComputadorTexto2} - pontuação ${totalComputadorValor}`)
+
+      if (totalUsuarioValor > totalComputadorValor && totalUsuarioValor <= 21){
+         console.log(`O usuário ganhou!`)
+      }else if (totalComputadorValor > totalUsuarioValor && totalComputadorValor <= 21) {
+         console.log(`O computador ganhou!`)
+      }else if (totalUsuarioValor === totalComputadorValor){
+         console.log(`Empate!`)
+
+      }
+      }else{
+
+         console.log('O jogo acabou!')
+
+      }
+
+   }
+
+   jogoNovaRodada()
+    
+
+
+
+
+
